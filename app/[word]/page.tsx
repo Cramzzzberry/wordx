@@ -48,12 +48,25 @@ async function GetWordResults(word: string) {
   return result
 }
 
-export default async function WordDef({ params }: { params: { word: string } }) {
+export default async function WordDef({ 
+  params 
+}: { 
+  params: { word: string } 
+}) {
+  
   const wordResults = await GetWordResults(params.word)
-
-  return (
-    <div className="px-48 py-16">
-      <WordResults results={ wordResults } />
-    </div>
-  )
+  
+  if ("title" in wordResults) {
+    return (
+      <div className="h-[calc(100vh-4rem)] font-bold text-[2rem] flex items-center justify-center">
+        <span className="w-2/3 text-center">{ wordResults.message }</span>
+      </div>
+    )
+  } else {
+    return (
+      <div className="px-48 py-16">
+        <WordResults results={ wordResults } />
+      </div>
+    )
+  }
 }
