@@ -10,7 +10,7 @@ export default function NavbarLayout({
 
   const router = useRouter()
 
-  async function RouteToWordDef(event) {
+  async function RouteToWordDef(event: Event) {
     event.preventDefault()
     const word = event.target.search.value
 

@@ -5,7 +5,7 @@ export default function Home() {
   //remember to always put this line inside of a react component, not on some function without component
   const router = useRouter()
 
-  async function RouteToWordDef(event) {
+  async function RouteToWordDef(event: Event) {
     event.preventDefault()
     const word = event.target.search.value
 
