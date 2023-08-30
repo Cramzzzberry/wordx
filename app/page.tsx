@@ -14,12 +14,17 @@ export default function Home() {
 
   return (
     <div className="w-screen h-screen flex flex-col justify-center items-center">
-      <h1>WordX <span className="text-[1rem]">An online dictonary</span></h1>
+      <div className="flex flex-row gap-4 items-end">
+        <h1>WordX</h1>
+        <span className="text-[1rem] pb-7">An online dictonary</span>
+      </div>
 
-      <form onSubmit={ RouteToWordDef } className="flex flex-col gap-2 items-center w-1/3">
+      <form onSubmit={ RouteToWordDef } className="flex flex-row items-center">
         <input type="text" name="search" id="search" placeholder="Search a word..."
-          className="border rounded-md w-full px-4 py-1 text-[1.125rem]" />
-        <button type="submit" className="bg-slate-100 border rounded-md px-2 py-1 w-1/2">Search</button>
+          className="searchbar" />
+        <button type="submit" className="searchbtn">
+          <span class="material-icons-round text-[1.625rem]">search</span>
+        </button>
       </form>
     </div>
   )

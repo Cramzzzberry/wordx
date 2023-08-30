@@ -64,7 +64,7 @@ export default async function WordDef({
     )
   } else {
     return (
-      <div className="px-48 py-16">
+      <div className="px-48 pt-16 pb-8">
         <WordResults results={ wordResults } />
       </div>
     )

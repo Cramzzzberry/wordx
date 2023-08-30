@@ -1,9 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'material-icons/iconfont/material-icons.css';
 
 @layer components {
   h1 {
     @apply font-semibold text-[6rem];
+  }
+
+  .searchbar {
+    @apply border rounded-l-md w-full px-6 py-2 text-[1rem] min-w-[30rem];
+  }
+
+  .searchbtn {
+    @apply 
+    flex flex-row items-center justify-center gap-2 
+    bg-slate-100 border border-slate-100 rounded-r-md px-2 py-2;
+  }
+
+  .searchnavbar {
+    @apply border rounded-md w-full px-6 py-2 text-[1rem] w-[30rem];
   }
 }

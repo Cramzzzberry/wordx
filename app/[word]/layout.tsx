@@ -23,7 +23,7 @@ export default function NavbarLayout({
         <Link href="/" className="font-bold text-[1.5rem]">WordX</Link>
         <form onSubmit={ RouteToWordDef }>
           <input type="text" name="search" id="search" placeholder="Search more..."
-            className="rounded-md w-full px-4 py-1 text-[1.125rem]" />
+            className="searchnavbar" />
         </form>
       </nav>
       { children }
