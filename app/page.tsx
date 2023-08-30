@@ -18,7 +18,7 @@ export default function Home() {
 
       <form onSubmit={ RouteToWordDef } className="flex flex-col gap-2 items-center w-1/3">
         <input type="text" name="search" id="search" placeholder="Search a word..."
-          className="border rounded-md w-full px-4 py-1" />
+          className="border rounded-md w-full px-4 py-1 text-[1.125rem]" />
         <button type="submit" className="bg-slate-100 border rounded-md px-2 py-1 w-1/2">Search</button>
       </form>
     </div>

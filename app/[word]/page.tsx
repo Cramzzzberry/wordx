@@ -1,16 +1,17 @@
-import Link from "next/link";
-
 function WordResults(props) {
   const results = props.results
 
   return results.map((result, index) => (
     <>
-      <h3 key={ index } className="font-semibold text-[2rem]">
-        { result.word }
-        <span className="font-normal text-[1.5rem]">
+      <div className="flex flex-row gap-4 items-center">
+        <h3 key={ index } className="font-bold text-[2rem] capitalize">
+          { result.word }
+        </h3>
+        <span className="text-[1.5rem]">
           { result.phonetics.length > 0 ? result.phonetics[0].text : '' }
         </span>
-      </h3><br />
+      </div>
+      <br />
 
       {/* word meanings */}
       <WordMeanings meanings={ result.meanings } />
@@ -23,7 +24,7 @@ function WordMeanings(props) {
 
   return meanings.map((meaning, index) => (
     <>
-      <span key={ index } className="italic">{ meaning.partOfSpeech }</span><br />
+      <span key={ index } className="font-semibold italic text-[1.25rem]">{ meaning.partOfSpeech }</span><br />
       <WordDefinitions definitions={ meaning.definitions } /><br />
     </>
   ))
@@ -51,10 +52,7 @@ export default async function WordDef({ params }: { params: { word: string } }) 
   const wordResults = await GetWordResults(params.word)
 
   return (
-    <div className="w-screen px-56 py-16">
-      <Link href="/" className="bg-slate-100 border rounded-md px-2 py-1">Home</Link>
-
-      {/* word results */}
+    <div className="px-48 py-16">
       <WordResults results={ wordResults } />
     </div>
   )
