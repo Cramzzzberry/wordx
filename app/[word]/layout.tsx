@@ -19,9 +19,9 @@ export default function NavbarLayout({
 
   return (
     <>
-      <nav className="sticky top-0 bg-slate-400 h-[4rem] flex flex-row gap-4 items-center px-48 text-slate-800">
-        <Link href="/" className="font-bold text-[1.5rem]">WordX</Link>
-        <form onSubmit={ RouteToWordDef }>
+      <nav className="navbar">
+        <Link href="/" className="hidden sm:inline font-bold text-[1.5rem]">WordX</Link>
+        <form onSubmit={ RouteToWordDef } className="w-full flex flex-row justify-center sm:justify-start">
           <input type="text" name="search" id="search" placeholder="Search more..."
             className="searchnavbar" />
         </form>

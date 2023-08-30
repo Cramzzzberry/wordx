@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function WordResults(props) {
   const results = props.results
 
@@ -58,15 +60,19 @@ export default async function WordDef({
   
   if ("title" in wordResults) {
     return (
-      <div className="h-[calc(100vh-4rem)] font-bold text-[2rem] flex items-center justify-center">
-        <span className="w-2/3 text-center">{ wordResults.message }</span>
+      <div className="h-[calc(100vh-4rem)] font-bold text-[2rem] flex flex-col items-center justify-center">
+        <span className="w-2/3 text-center">Sorry, we couldn&apos;t find what you&apos;re looking for</span>
+        <Link href="/" className="homebtn error">Go Home</Link>
       </div>
     )
   } else {
     return (
-      <div className="px-48 pt-16 pb-8">
-        <WordResults results={ wordResults } />
-      </div>
+      <>
+        <div className="px-4 sm:px-24 xl:px-48 pt-16 pb-8">
+          <Link href="/" className="homebtn">Go Home</Link>
+          <WordResults results={ wordResults } />
+        </div>
+      </>
     )
   }
 }

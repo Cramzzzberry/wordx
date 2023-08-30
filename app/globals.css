@@ -5,11 +5,11 @@
 
 @layer components {
   h1 {
-    @apply font-semibold text-[6rem];
+    @apply font-semibold text-[4rem] leading-none sm:leading-normal sm:text-[6rem];
   }
 
   .searchbar {
-    @apply border rounded-l-md w-full px-6 py-2 text-[1rem] min-w-[30rem];
+    @apply border rounded-l-md w-full px-6 py-2 text-[1rem] xl:min-w-[30rem];
   }
 
   .searchbtn {
@@ -19,6 +19,21 @@
   }
 
   .searchnavbar {
-    @apply border rounded-md w-full px-6 py-2 text-[1rem] w-[30rem];
+    @apply border rounded-md px-6 py-2 text-[1rem] w-full max-w-[30rem];
+  }
+
+  .navbar {
+    @apply 
+    sticky top-0 bg-slate-400 h-[4rem] 
+    flex flex-row gap-4 items-center
+    px-4 xl:px-48 text-slate-800;
+  }
+
+  .homebtn {
+    @apply inline-block sm:hidden bg-slate-100 border border-slate-100 rounded-md px-2 py-2 mb-2;
+  }
+
+  .homebtn.error {
+    @apply inline-block bg-slate-100 border border-slate-100 rounded-md px-2 py-2 mb-2 text-[1rem] font-normal;
   }
 }
